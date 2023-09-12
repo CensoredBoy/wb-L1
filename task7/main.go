@@ -28,10 +28,10 @@ func PushToAdd(ch chan threadMap) {
 func main() {
 	ch := make(chan threadMap)
 	m := make(map[int]int)
-	mx := sync.Mutex{}
+	mx := new(sync.Mutex)
 	for i := 0; i < 10; i++ {
 		go PushToAdd(ch)
-		go AddToMap(ch, m, &mx)
+		go AddToMap(ch, m, mx)
 	}
 
 	time.Sleep(time.Second)

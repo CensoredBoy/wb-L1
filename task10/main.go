@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func stepValue(val float32) int {
-	return int(val) / 10 * 10
+	return int(val) / 10 * 10 //отсекаем младший разряд
 }
 
 func main() {

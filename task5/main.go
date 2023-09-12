@@ -24,9 +24,10 @@ func writeToChanel(ch chan int) {
 
 func main() {
 	channel := make(chan int)
-	defer close(channel) // закрываем канал, чтобы после таймера прекратить чтение из него
+	
 	go writeToChanel(channel)
 	go readFromChanel(channel)
 
 	time.Sleep(time.Duration(seconds) * time.Second)
+	close(channel) // закрываем канал, чтобы после таймера прекратить чтение из него
 }
