@@ -20,8 +20,8 @@ func (c *counter) increment(wg *sync.WaitGroup) {
 
 func (c *counter) getCount() int{
 	var result int
-	c.mx.RLock()
-	result = c.i
+	c.mx.RLock()//блокируем mutex для чтения, так как может случится race condition во время инкремента
+	result = c.i 
 	c.mx.RUnlock()
 	return result
 }
@@ -29,10 +29,10 @@ func (c *counter) getCount() int{
 func main() {
 	var m sync.RWMutex
 	c := counter{0, m}
-	wg := sync.WaitGroup{}
+	wg := new(sync.WaitGroup)
 	for i := 0; i < 100; i++ {
 		wg.Add(1)
-		go c.increment(&wg)
+		go c.increment(wg)
 
 	}
 	wg.Wait()

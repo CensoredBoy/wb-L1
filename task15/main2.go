@@ -19,7 +19,7 @@ func someFunc() {
 	//создается новый байтовый слайс. Так как у нас большие строки то может быть переполнение стека
 
 
-	//Builder минимизирует копирование
+	//Builder минимизирует копирование 
 	var b strings.Builder
 	b.Grow(100)
 	b.WriteString(createHugeString(1 << 10)[:100])

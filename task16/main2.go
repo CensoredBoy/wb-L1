@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+//реализация quicksort без пакета sort
+
 func main() {
 	arr := [5]int{1, 0, 5, 11, 9}
 	

@@ -5,6 +5,8 @@ import (
 	"strings"
 )
 
+//то же самое, что и в 19 задаче, только для жлементов слайса
+
 func reverse(str string) string {
 	words := strings.Split(str, " ")
 	var result string

@@ -4,6 +4,8 @@ import (
 	"fmt"
 )
 
+//бинарный поиск без пакета sort
+
 func main() {
 	test := []int{1,2,3,4,5}
 	fmt.Println(bin_search(5, test))

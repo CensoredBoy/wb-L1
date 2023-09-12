@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+//реализация множества через хеш таблицу
+
 func newSet(slice []string) []string {
 	setMap := make(map[string]bool)
 	result := []string{}

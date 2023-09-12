@@ -6,12 +6,15 @@ import (
 )
 
 type Point struct {
-	x int
+	//в go идентификаторы, названные с маленькой буквы, не подлежат экспорту
+	x int 
 	y int
 }
 
+
+// коструктор
 func NewPoint(x int, y int) Point {
-	return Point{x, y}
+	return Point{x, y} 
 }
 
 func Distance(point1 Point, point2 Point) float64 {

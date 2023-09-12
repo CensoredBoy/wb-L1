@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+
+
 func printType(data interface{}) {
 	fmt.Printf("%v is %T\n", data, data)
 }

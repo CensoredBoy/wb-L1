@@ -8,8 +8,8 @@ import (
 func check(s string) bool {
 	str := strings.ToLower(s)
 	mapResult := make(map[rune]int)
-	for _, symb := range str {
-		mapResult[symb]++
+	for _, char := range str {
+		mapResult[char]++
 	}
 	if len(mapResult) != len(str) {
 		return false
@@ -18,6 +18,6 @@ func check(s string) bool {
 }
 
 func main() {
-	str := "cd"
+	str := "dflkjs"
 	fmt.Println("result is - ", check(str))
 }
